@@ -4,4 +4,4 @@
 *.scss.map
 node-modules/
 node_modules
-wp-config.php
+*wp-config.php
