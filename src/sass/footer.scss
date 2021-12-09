@@ -1,0 +1,63 @@
+footer {
+  background-color: #03b7f1;
+  color: white;
+  margin-top: 40px;
+  font-size: 20px;
+  > * {
+    padding: $padding;
+    word-wrap: break-word;
+    line-height: 1.5;
+  }
+  .top {
+    padding-top: 20px;
+  }
+
+  nav {
+    padding-bottom: $paddingb;
+  }
+
+  @include breakpoint($desktop) {
+    .top {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    nav {
+      justify-self: end;
+    }
+  }
+
+  #creater {
+    @include breakpoint(0, $mobile) {
+      width: 50%;
+    }
+    padding-bottom: $paddingb;
+  }
+
+  #random {
+    padding-bottom: $paddingb;
+  }
+
+  #icons,
+  #sources {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding-bottom: $paddingb;
+    li > p {
+      font-size: 15px;
+    }
+  }
+
+  .nav-footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #alex {
+    flex-basis: 100%;
+  }
+
+  #line {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

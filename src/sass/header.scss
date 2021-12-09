@@ -1,0 +1,146 @@
+#hero {
+  .maxwidthcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  background-image: url("./images/illuminated-keyboard-1242287.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 25em;
+  h2 {
+    color: $primarycolor;
+    font-size: $fontsizebig;
+    font-weight: 600;
+    margin-top: 2em;
+  }
+  span {
+    background-color: white;
+    line-height: 68px;
+    padding: 6px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  a {
+    background-color: #3cae47;
+    color: white;
+    font-size: 25px;
+    width: max-content;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+}
+.hero-img {
+  object-fit: cover;
+  height: 25em;
+  width: 100%;
+  align-items: center;
+}
+
+h1 {
+  color: $primarycolor;
+}
+
+#header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+  margin: 1.3em auto 0.5em auto;
+}
+
+@include breakpoint(0, $mobile) {
+  #navigation {
+    position: fixed;
+    width: 100%;
+    margin-top: 22em;
+    left: 0px;
+
+    ul {
+      position: relative;
+      width: 100%;
+    }
+    li:last-child a {
+      border-bottom: 1px solid grey;
+    }
+    a {
+      display: block;
+      padding: 20px;
+      font-size: 18px;
+      padding-left: 25px;
+      color: black;
+      border-top: 1px solid grey;
+      background-color: white;
+      &:hover {
+        background-color: $primarycolor;
+        color: white;
+      }
+    }
+    .active {
+      color: $primarycolor;
+    }
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    background-color: $primarycolor !important;
+  }
+
+  .hamburger {
+    padding: 0 !important;
+  }
+}
+
+@include breakpoint($desktop) {
+  h1 {
+    font-size: 44px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 27px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 19px;
+  }
+  footer {
+    font-size: 16px;
+  }
+  #burger {
+    @include hidden;
+  }
+  #navigation {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1em;
+      a {
+        margin: 10px;
+        font-size: 17px;
+        &:hover {
+          border-bottom: 1px solid $primarycolor !important;
+          color: $primarycolor;
+        }
+      }
+    }
+    .current-menu-item {
+      a {
+        border-bottom: 1px solid $primarycolor !important;
+        color: $primarycolor;
+      }
+    }
+  }
+
+  #header-top {
+    margin-top: 20px;
+  }
+
+  #hero .maxwidthcontainer,
+  .hero-img .maxwidthcontainer {
+    position: absolute;
+    left: 40%;
+  }
+}

@@ -1,0 +1,173 @@
+@include breakpoint(0, $mobile) {
+  .article-section {
+    display: flex;
+    flex-direction: column;
+
+    p,
+    cite,
+    blockquote {
+      flex-basis: 100%;
+      padding-left: $paddingb;
+      line-height: 1.5;
+    }
+    p,
+    cite {
+      font-size: 15px;
+    }
+
+    p,
+    blockquote {
+      padding-bottom: 12px;
+    }
+
+    .ref-img {
+      padding: 20px;
+      object-fit: cover;
+      height: 400px;
+    }
+    #quotation-mark {
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
+
+#client-1 {
+  background-color: #fffcdb;
+}
+
+#client-2 {
+  background-color: #cdedfb;
+}
+
+#client-3 {
+  background-color: #ddecd7;
+}
+
+#quotation-mark {
+  background-color: #03b7f1;
+}
+
+@include breakpoint($desktop) {
+  .ref-img {
+    width: 100%;
+    height: 100%;
+    padding: 0.6em;
+    padding-bottom: 0;
+  }
+
+  #clients {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 0 auto;
+    height: unset;
+
+    img {
+      object-fit: cover;
+      justify-self: center;
+    }
+    p {
+      margin-top: 1.2em;
+    }
+    p,
+    cite,
+    blockquote {
+      padding: 0.3em;
+    }
+    p,
+    cite {
+      font-size: 16px;
+    }
+    blockquote {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
+
+  #client-1 {
+    grid-row: 1/4;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    img {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      z-index: 3;
+    }
+    cite,
+    p {
+      grid-column: 1/3;
+      grid-row: 2/3;
+      background-color: #fffcdb;
+      z-index: 3;
+    }
+    blockquote {
+      grid-column: 1/4;
+      grid-row: 3/4;
+      background-color: #fffcdb;
+      z-index: 3;
+    }
+  }
+
+  #client-2 {
+    z-index: 2;
+    grid-row: 1/4;
+    grid-column: 2/5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    img {
+      grid-column: 3/4;
+      grid-row: 1/2;
+    }
+
+    cite,
+    p {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      text-align: right;
+    }
+    blockquote {
+      grid-column: 2/4;
+      grid-row: 2/3;
+      align-self: center;
+      text-align: right;
+    }
+  }
+
+  #client-3 {
+    grid-row: 1/4;
+    grid-column: 5/9;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(3, 33%);
+    .ref-img {
+      grid-column: 2/5;
+      grid-row: 1/3;
+    }
+
+    cite,
+    p {
+      grid-column: 1/5;
+      grid-row: 3/4;
+      align-self: start;
+      justify-self: end;
+    }
+    blockquote {
+      grid-column: 1/5;
+      grid-row: 3/4;
+      align-self: end;
+      text-align: right;
+    }
+    #quotation-mark {
+      grid-column: 1/2;
+      grid-row: 1/3;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+#services > ul > li {
+  border-radius: 10px;
+  margin-bottom: 30px;
+
+  a > img {
+    height: 250px;
+    width: 100%;
+    padding: 2em;
+    @include breakpoint($desktop) {
+      height: 300px;
+    }
+  }
+
+  a > p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+  }
+}
+
+#design {
+  background-color: #fffad8;
+}
+
+#consulting {
+  background-color: #d8edd6;
+}
+
+#strategy {
+  background-color: #c6effc;
+}
+#service-list {
+  display: flex;
+}
+
+@include breakpoint(0, $mobile) {
+  #service-list {
+    flex-wrap: wrap;
+
+    li {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@include breakpoint($desktop) {
+  #service-list {
+    justify-content: center;
+  }
+  #services > ul > li {
+    margin: 0.7em;
+  }
+}

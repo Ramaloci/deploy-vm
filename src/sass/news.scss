@@ -1,0 +1,24 @@
+#news-container {
+  font-size: 17px;
+  & > :not(:last-child) {
+    margin-bottom: 10px;
+    @include breakpoint($desktop) {
+      margin-bottom: 15px;
+    }
+  }
+  background-color: #f8dfd4;
+  border-radius: 10px;
+  padding: 10px;
+
+  & > li {
+    & > a {
+      color: $primarycolor;
+    }
+
+    @include breakpoint(0, $mobile) {
+      & > .prewrap {
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

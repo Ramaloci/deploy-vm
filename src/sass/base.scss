@@ -1,0 +1,103 @@
+$primarycolor: #009ee3;
+
+$mobile: 800;
+$desktop: 801;
+
+$fontsizebig: 42px;
+$fontsizemedium: 32px;
+
+$paddingb: 20px;
+$padding: 0 20px 0 20px;
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+body {
+  font-family: "Slabo 13px";
+}
+
+@function pem($px, $base: 16) {
+  @return ($px / $base) + em;
+}
+
+@function rem($px, $base: 16) {
+  @return ($px / $base) + rem;
+}
+
+@mixin breakpoint($min, $max: 0) {
+  @if $max == 0 {
+    @media (min-width: rem($min)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: rem($min)) and (max-width: rem($max)) {
+      @content;
+    }
+  }
+}
+.maxwidthcontainer {
+  max-width: 94%;
+  margin: 0 auto;
+  padding: 5px;
+}
+@include breakpoint(0, $mobile) {
+  #navigation {
+    @include hidden;
+  }
+  h1 {
+    font-size: 44px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 27px;
+    font-weight: bold;
+  }
+  p,
+  blockquote {
+    font-size: 20px;
+  }
+  footer {
+    font-size: 16px;
+  }
+}
+
+@include breakpoint($desktop) {
+  h1 {
+    font-size: 44px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 27px;
+    font-weight: bold;
+  }
+  p,
+  blockquote {
+    font-size: 20px;
+  }
+  footer {
+    font-size: 16px;
+  }
+}
+
+.section-title {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
