@@ -197,11 +197,7 @@
         <div class="top">
             <p>&copy; Alex Mayer <script>document.write( new Date().getFullYear() );</script></p>
             <nav>
-                <ul class="nav-footer">
-                    <li><a href="#">Impressum</a></li>
-                    <li id="line">|</li>
-                    <li><a href="#">Datenschutzerklärung</a></li>
-                </ul>
+                <?php wp_nav_menu(array('theme_location' => 'extra-menu')); ?>
             </nav>
             <p id="creater">
                 Demo-Wordpress-Seite im Rahmen der LV ‚Content Mangagement Systeme' an

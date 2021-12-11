@@ -47,17 +47,19 @@ footer {
     }
   }
 
-  .nav-footer {
+  #menu-footer {
     display: flex;
     flex-wrap: wrap;
+    
+    li:first-child::after {
+      content:"|";
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
+
 
   #alex {
     flex-basis: 100%;
-  }
-
-  #line {
-    margin-left: 10px;
-    margin-right: 10px;
   }
 }
