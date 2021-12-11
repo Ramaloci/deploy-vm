@@ -54,9 +54,9 @@
         <?php
         if (have_posts()) {
             while (have_posts()) {
-                //TODO HERO Image and hero
+                //TODO HERO text
                 $thumbnail  = get_the_post_thumbnail();
-
+                
                 // Add whichever attributes you want to exclude here
                 $thumbnail = preg_replace('/(width|height|srcset|sizes)="[^"]*"/', '', $thumbnail);
                 $thumbnail = preg_replace('/class="[^"]*"/', '/class="hero-img"/', $thumbnail);
@@ -195,7 +195,7 @@
     </main>
     <footer>
         <div class="top">
-            <p>&copy; Alex Mayer 2020</p>
+            <p>&copy; Alex Mayer <script>document.write( new Date().getFullYear() );</script></p>
             <nav>
                 <ul class="nav-footer">
                     <li><a href="#">Impressum</a></li>
