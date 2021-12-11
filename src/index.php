@@ -195,7 +195,7 @@
     </main>
     <footer>
         <div class="top">
-            <p>&copy; Alex Mayer 2020</p>
+            <p>&copy; Alex Mayer <script>document.write( new Date().getFullYear() );</script></p>
             <nav>
                 <ul class="nav-footer">
                     <li><a href="#">Impressum</a></li>
