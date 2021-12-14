@@ -263,6 +263,22 @@ h1 {
   margin: 1.3em auto 0.5em auto;
 }
 
+.hero-text h2 {
+  position: absolute;
+  left: 40%;
+  top: 17%;
+  color: #009ee3;
+  font-size: 42px;
+  font-weight: 600;
+  margin-top: 2em;
+}
+.hero-text span {
+  background-color: white;
+  line-height: 68px;
+  padding: 6px;
+  box-decoration-break: clone;
+}
+
 @media (min-width: 0rem) and (max-width: 50rem) {
   #navigation {
     position: fixed;
@@ -653,16 +669,17 @@ footer #icons li > p,
 footer #sources li > p {
   font-size: 15px;
 }
-footer .nav-footer {
+footer #menu-footer {
   display: flex;
   flex-wrap: wrap;
 }
-footer #alex {
-  flex-basis: 100%;
-}
-footer #line {
+footer #menu-footer li:first-child::after {
+  content: "|";
   margin-left: 10px;
   margin-right: 10px;
+}
+footer #alex {
+  flex-basis: 100%;
 }
 
 /*!

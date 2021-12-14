@@ -8,7 +8,7 @@ require 'recipe/common.php';
 set('application', 'wpalex');
 
 // Project repository
-set('repository', 'https://github.com/YOUR-REPOSITORY-ON-GITHUB');
+set('repository', 'https://github.com/Ramaloci/deploy-vm');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);

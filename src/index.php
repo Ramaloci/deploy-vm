@@ -51,41 +51,48 @@
     </header>
 
     <main>
-        <?php
-        if (have_posts()) {
-            while (have_posts()) {
-                //TODO HERO text
-                $thumbnail  = get_the_post_thumbnail();
-                
-                // Add whichever attributes you want to exclude here
-                $thumbnail = preg_replace('/(width|height|srcset|sizes)="[^"]*"/', '', $thumbnail);
-                $thumbnail = preg_replace('/class="[^"]*"/', '/class="hero-img"/', $thumbnail);
-                echo $thumbnail;
-                break;
-            }
-        } else {
-            //currently no posts
-            echo "<p>Derzeit noch keine Beiträge... Bitte komm später wieder zurück</p>";
-        }
-
-        ?>
-        <section id='maincontent' class="maxwidthcontainer">
-            <?php
-            //THE LOOP!!!   
+        <?php if (!is_front_page()) {
             if (have_posts()) {
                 while (have_posts()) {
-                    //the_post_thumbnail();
-                    the_post();
-                    the_title();
-                    the_content();
+        ?>
+                    <div class="hero-text">
+                        <?php
+                        //TODO HERO text
+                        $thumbnail  = get_the_post_thumbnail();
+
+                        // Add whichever attributes you want to exclude here
+                        $thumbnail = preg_replace('/(width|height|srcset|sizes)="[^"]*"/', '', $thumbnail);
+                        $thumbnail = preg_replace('/class="[^"]*"/', '/class="hero-img"/', $thumbnail);
+                        echo $thumbnail;
+
+                        ?> <h2> <span> <?php the_field('herotext'); ?> </span> </h2>
+                    </div>
+                    <?php break; ?>
+            <?php
                 }
             } else {
                 //currently no posts
                 echo "<p>Derzeit noch keine Beiträge... Bitte komm später wieder zurück</p>";
             }
+
             ?>
-        </section>
-        <?php if (is_front_page()) { ?>
+            <section id='maincontent' class="maxwidthcontainer">
+                <?php
+                //THE LOOP!!!   
+                if (have_posts()) {
+                    while (have_posts()) {
+                        //the_post_thumbnail();
+                        the_content();
+                        break;
+                    }
+                } else {
+                    //currently no posts
+                    echo "<p>Derzeit noch keine Beiträge... Bitte komm später wieder zurück</p>";
+                }
+                ?>
+            </section>
+        <?php }
+        if (is_front_page()) { ?>
             <section id="hero">
                 <div class="maxwidthcontainer">
                     <h2><span>Glänzende Ideen für leuchtende Augen</span></h2>
@@ -195,7 +202,10 @@
     </main>
     <footer>
         <div class="top">
-            <p>&copy; Alex Mayer <script>document.write( new Date().getFullYear() );</script></p>
+            <p>&copy; Alex Mayer <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
             <nav>
                 <?php wp_nav_menu(array('theme_location' => 'extra-menu')); ?>
             </nav>
