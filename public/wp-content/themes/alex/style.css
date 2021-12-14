@@ -209,6 +209,27 @@ a {
   color: inherit;
 }
 
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.wpcf7-form p {
+  margin: 1em auto;
+}
+.wpcf7-form .wpcf7-submit {
+  width: 9em;
+  padding: 1em 2em;
+}
+
+.content {
+  max-width: 70%;
+  margin: 2em auto;
+}
+.content h2 {
+  color: #009ee3;
+}
+
 #hero {
   background-image: url("./images/illuminated-keyboard-1242287.jpg");
   background-size: cover;

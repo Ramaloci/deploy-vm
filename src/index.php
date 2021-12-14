@@ -76,11 +76,13 @@
             }
 
             ?>
-            <section id='maincontent' class="maxwidthcontainer">
+            <section id='content' class="content">
+
                 <?php
                 //THE LOOP!!!   
                 if (have_posts()) {
                     while (have_posts()) {
+                        the_post();
                         //the_post_thumbnail();
                         the_content();
                         break;

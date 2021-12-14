@@ -56,7 +56,6 @@
                 while (have_posts()) {
         ?>
                     <div class="hero-text">
-
                         <?php
                         //TODO HERO text
                         $thumbnail  = get_the_post_thumbnail();
@@ -68,10 +67,7 @@
 
                         ?> <h2> <span> <?php the_field('herotext'); ?> </span> </h2>
                     </div>
-
-
                     <?php break; ?>
-
             <?php
                 }
             } else {
@@ -80,11 +76,13 @@
             }
 
             ?>
-            <section id='maincontent' class="maxwidthcontainer">
+            <section id='content' class="content">
+
                 <?php
                 //THE LOOP!!!   
                 if (have_posts()) {
                     while (have_posts()) {
+                        the_post();
                         //the_post_thumbnail();
                         the_content();
                         break;

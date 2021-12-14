@@ -101,3 +101,24 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  p {
+    margin: 1em auto;
+  }
+  .wpcf7-submit {
+    width: 9em;
+    padding: 1em 2em;
+  }
+}
+
+.content {
+  max-width: 70%;
+  margin: 2em auto;
+  h2 {
+    color: $primarycolor;
+  }
+}
